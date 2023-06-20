@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class WeatherData {
     private String API;
-    private final String API_KEY = "c264fde3cefb2270288bc14381a41ea9";
+    private final String API_KEY = "";
 
     private static HttpURLConnection connection = null;
 
