@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 
 public class WeatherData {
     private String API;
@@ -61,8 +62,8 @@ public class WeatherData {
         double tempMin = obj.getJSONObject("main").getDouble("temp_min");
         double tempMax = obj.getJSONObject("main").getDouble("temp_max");
         int visibility = obj.getInt("visibility");
-        int sunrise = obj.getJSONObject("sys").getInt("sunrise");
-        int sunset = obj.getJSONObject("sys").getInt("sunset");
+        String sunrise = convertTime(obj.getJSONObject("sys").getInt("sunrise"));
+        String sunset = convertTime(obj.getJSONObject("sys").getInt("sunset"));
 
         Weather weather = new Weather();
         weather.setCity(city);
@@ -78,5 +79,11 @@ public class WeatherData {
 
         return weather;
     }
+
+    private String convertTime(long unixTime) {
+        Date date = new Date(unixTime * 1000);
+        return date.getHours() + ":" + date.getMinutes();
+    }
+
 
 }

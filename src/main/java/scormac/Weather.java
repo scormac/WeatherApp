@@ -2,8 +2,8 @@ package scormac;
 
 public class Weather {
     private double temp, feelsLike, tempMin, tempMax;
-    private String city, country, description;
-    private int visibility, sunrise, sunset;
+    private String city, country, description, sunrise, sunset;
+    private int visibility;
 
 
     public double getTemp() {
@@ -70,19 +70,19 @@ public class Weather {
         this.visibility = visibility;
     }
 
-    public int getSunrise() {
+    public String getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise(int sunrise) {
+    public void setSunrise(String sunrise) {
         this.sunrise = sunrise;
     }
 
-    public int getSunset() {
+    public String getSunset() {
         return sunset;
     }
 
-    public void setSunset(int sunset) {
+    public void setSunset(String sunset) {
         this.sunset = sunset;
     }
 }
