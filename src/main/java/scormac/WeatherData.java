@@ -62,8 +62,8 @@ public class WeatherData {
         double tempMin = obj.getJSONObject("main").getDouble("temp_min");
         double tempMax = obj.getJSONObject("main").getDouble("temp_max");
         int visibility = obj.getInt("visibility");
-        String sunrise = convertTime(obj.getJSONObject("sys").getInt("sunrise"));
-        String sunset = convertTime(obj.getJSONObject("sys").getInt("sunset"));
+        String sunrise = convertTime(obj.getJSONObject("sys").getLong("sunrise"));
+        String sunset = convertTime(obj.getJSONObject("sys").getLong("sunset"));
 
         Weather weather = new Weather();
         weather.setCity(city);
